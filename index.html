@@ -2,98 +2,83 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Zacky - Sosial Link</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Profil Zacky</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      background-color: #000000;
-      color: #ffffff;
-      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: white;        /* 🔁 Ubah ke putih */
+      font-family: sans-serif;
+      color: black;                   /* 🔁 Teks jadi hitam */
       text-align: center;
-      padding: 40px 20px;
+      overflow-x: hidden;
     }
 
-    h1 {
-      font-size: 2.8rem;
-      margin-bottom: 10px;
-      color: #00ffc3;
-      font-weight: 600;
+    .profile-container {
+      padding-top: 50px;
     }
 
-    p {
-      font-size: 1.2rem;
-      margin-bottom: 30px;
-      color: #cccccc;
-      font-weight: 400;
+    .profile-img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid black;       /* Kontras di latar putih */
     }
 
-    .links {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 15px;
+    .description {
+      margin-top: 15px;
+      font-size: 16px;
+      color: black;
     }
 
-    .link-btn {
+    .button {
+      background-color: #f0f0f0;      /* Warna abu muda */
+      color: black;
+      padding: 10px 18px;
+      margin: 15px auto;
+      border-radius: 10px;
+      width: 85%;
+      max-width: 320px;
+      font-size: 16px;
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: #1f1f1f;
-      color: #ffffff;
-      padding: 14px 28px;
-      border-radius: 10px;
+      gap: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
       text-decoration: none;
-      font-size: 1.1rem;
-      width: 280px;
-      transition: background 0.3s, transform 0.2s;
-      font-weight: 500;
-      gap: 12px;
     }
 
-    .link-btn:hover {
-      background-color: #333333;
-      transform: scale(1.05);
-    }
-
-    .link-btn img {
-      width: 24px;
-      height: 24px;
+    .button img {
+      width: 22px;
+      height: 22px;
     }
   </style>
 </head>
 <body>
+  <div class="profile-container">
+    <img src="profil.png" alt="Foto Zacky" class="profile-img">
+    <p class="description">Gabung atau follow akun sosial aku di bawah ini:</p>
 
-  <div style="text-align:center;">
-  <img src="profil.png" alt="Foto Profil Zacky" style="width:120px; height:120px; border-radius:50%; object-fit:cover; border: 3px solid white;">
-  <p style="color:white; margin-top:10px;">Gabung atau follow akun sosial aku di bawah ini:</p>
-  </div>
-<style>.profile-img {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 3px solid #000;
-  margin: 20px auto;
-  display: block;
-}
- </style>
-  <div class="links">
-    <a class="link-btn" href="https://chat.whatsapp.com/GEESZeBf4c7JzGvRArmRii?mode=ac_c" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+    <a class="button" href="https://chat.whatsapp.com/YOUR_LINK" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
       Grup WhatsApp
     </a>
 
-    <a class="link-btn" href="https://t.me/+YDvhBRZim8w0ODE1" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram" />
+    <a class="button" href="https://t.me/YOUR_TELEGRAM" target="_blank">
+      <img src="telegram-icon.png" alt="Telegram">
       Grup Telegram
     </a>
 
-    <a class="link-btn" href="https://www.tiktok.com/@abduldafaarizacky_?_r=1&_d=eha0hcm3g24a8f&sec_uid=MS4wLjABAAAAIQxLVBDrjEVoRgsHh4aa55GnanczI6zS9up5F3TOvySie5btaUoYfYz_YRUUoCyY&share_author_id=6976933395646907393&sharer_language=id&source=h5_t&u_code=dj8b2daegl313h&timestamp=1751427891&user_id=6976933395646907393&sec_user_id=MS4wLjABAAAAIQxLVBDrjEVoRgsHh4aa55GnanczI6zS9up5F3TOvySie5btaUoYfYz_YRUUoCyY&utm_source=copy&utm_campaign=client_share&utm_medium=android&share_iid=7520679764450281223&share_link_id=49618267-30d7-43f4-9527-0a5f0116e06e&share_app_id=1180&ugbiz_name=ACCOUNT&social_share_type=5&enable_checksum=1" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/3046/3046122.png" alt="TikTok" />
+    <a class="button" href="https://www.tiktok.com/@yourusername" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/TikTok_logo.svg" alt="TikTok">
       TikTok
     </a>
   </div>
-
 </body>
 </html>
