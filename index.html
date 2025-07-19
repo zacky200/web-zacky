@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zacky's Links 🔥</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+      background-size: 400% 400%;
+      animation: gradientShift 8s ease infinite;
+      font-family: 'Inter', sans-serif;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    
+    .container {
+      width: 100%;
+      max-width: 400px;
+      padding: 20px;
+    }
+    
+    .profile-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(20px);
+      border-radius: 30px;
+      padding: 40px 30px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .profile-card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+      animation: shimmer 3s infinite;
+      pointer-events: none;
+    }
+    
+    @keyframes shimmer {
+      0% { transform: translateX(-100%) translateY(-100%) rotate(30deg); }
+      100% { transform: translateX(100%) translateY(100%) rotate(30deg); }
+    }
+    
+    .profile-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid rgba(255, 255, 255, 0.3);
+      display: block;
+      margin: 0 auto 20px;
+      position: relative;
+      z-index: 2;
+      transition: transform 0.3s ease;
+    }
+    
+    .profile-img:hover {
+      transform: scale(1.05);
+    }
+    
+    .name {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      background: linear-gradient(45deg, #fff, #ff6b6b, #4ecdc4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .description {
+      font-size: 16px;
+      opacity: 0.9;
+      margin-bottom: 30px;
+      font-weight: 400;
+      line-height: 1.5;
+    }
+    
+    .links-container {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    
+    .link-button {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      color: white;
+      padding: 18px 24px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .link-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.5s ease;
+    }
+    
+    .link-button:hover::before {
+      left: 100%;
+    }
+    
+    .link-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      background: rgba(255, 255, 255, 0.25);
+    }
+    
+    .link-button:active {
+      transform: translateY(-1px);
+    }
+    
+    .link-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      overflow: hidden;
+    }
+    
+    .link-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+    
+    .whatsapp { background: linear-gradient(45deg, #25d366, #128c7e); }
+    .telegram { background: linear-gradient(45deg, #0088cc, #0066aa); }
+    .tiktok { background: linear-gradient(45deg, #ff0050, #000000); }
+    .lynk { background: linear-gradient(45deg, #ff6b6b, #4ecdc4); }
+    
+    .emoji {
+      font-size: 18px;
+      margin-left: 8px;
+      animation: bounce 2s infinite;
+    }
+    
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
+    }
+    
+    .footer {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 14px;
+      opacity: 0.7;
+    }
+    
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 25px;
+    }
+    
+    .stat-item {
+      text-align: center;
+    }
+    
+    .stat-number {
+      font-size: 20px;
+      font-weight: 700;
+      color: #ff6b6b;
+    }
+    
+    .stat-label {
+      font-size: 12px;
+      opacity: 0.8;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    @media (max-width: 480px) {
+      .profile-card {
+        margin: 20px;
+        padding: 30px 20px;
+      }
+      
+      .name {
+        font-size: 24px;
+      }
+      
+      .description {
+        font-size: 14px;
+      }
+      
+      .link-button {
+        padding: 16px 20px;
+        font-size: 15px;
+      }
+    }
+    
+    .floating-shapes {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+    
+    .shape {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    .shape:nth-child(1) {
+      width: 80px;
+      height: 80px;
+      top: 20%;
+      left: 10%;
+      animation-delay: 0s;
+    }
+    
+    .shape:nth-child(2) {
+      width: 120px;
+      height: 120px;
+      top: 60%;
+      right: 10%;
+      animation-delay: 2s;
+    }
+    
+    .shape:nth-child(3) {
+      width: 60px;
+      height: 60px;
+      bottom: 20%;
+      left: 20%;
+      animation-delay: 4s;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(180deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="floating-shapes">
+    <div class="shape"></div>
+    <div class="shape"></div>
+    <div class="shape"></div>
+  </div>
+  
+  <div class="container">
+    <div class="profile-card">
+      <img src="profil.png" alt="Zacky" class="profile-img">
+      <h1 class="name">Zacky</h1>
+      <p class="description">Content Creator • Gen Z Vibes ✨<br>Follow me for daily content!</p>
+      
+      <div class="stats">
+        <div class="stat-item">
+          <div class="stat-number">2.5K</div>
+          <div class="stat-label">Followers</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">150+</div>
+          <div class="stat-label">Posts</div>
+        </div>
+      </div>
+      
+      <div class="links-container">
+        <a class="link-button whatsapp" href="https://chat.whatsapp.com/GEESZeBf4c7JzGvRArmRii?mode=ac_c" target="_blank">
+          <div class="link-icon">
+            <img src="whatsapp-icon.png" alt="WhatsApp">
+          </div>
+          WhatsApp Group
+          <span class="emoji">🔥</span>
+        </a>
+        
+        <a class="link-button telegram" href="https://t.me/+YDvhBRZim8w0ODE1" target="_blank">
+          <div class="link-icon">
+            <img src="telegram-icon.png" alt="Telegram">
+          </div>
+          Telegram Group
+          <span class="emoji">⚡</span>
+        </a>
+        
+        <a class="link-button tiktok" href="https://www.tiktok.com/@abduldafaarizacky_" target="_blank">
+          <div class="link-icon">
+            <img src="tiktok-icon.png" alt="TikTok">
+          </div>
+          TikTok
+          <span class="emoji">🎬</span>
+        </a>
+        
+        <a class="link-button lynk" href="https://lynk.id/zakibadeg" target="_blank">
+          <div class="link-icon">
+            <img src="lynk.id.jpg" alt="lynk.id">
+          </div>
+          Lynk.id 
+          <span class="emoji">✨</span>
+        </a>
+      </div>
+      
+      <div class="footer">
+        <p>© 2025 Zacky • Made with ❤️</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
